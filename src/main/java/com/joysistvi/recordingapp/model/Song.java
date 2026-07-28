@@ -6,11 +6,9 @@ public class Song {
     private String length;
     private String genre;
     private int albumId;
-    private boolean isArchived;
+    private int isArchived; // 0 = Active, 1 = Archived
 
-    public Song() {}
-
-    public Song(int id, String title, String length, String genre, int albumId, boolean isArchived) {
+    public Song(int id, String title, String length, String genre, int albumId, int isArchived) {
         this.id = id;
         this.title = title;
         this.length = length;
@@ -19,21 +17,23 @@ public class Song {
         this.isArchived = isArchived;
     }
 
+    // Overloaded Constructor for Creation (defaults isArchived to 0)
+    public Song(int id, String title, String length, String genre, int albumId) {
+        this(id, title, length, genre, albumId, 0);
+    }
+
+    // Getters and Setters
     public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-
     public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
-
     public String getLength() { return length; }
-    public void setLength(String length) { this.length = length; }
-
     public String getGenre() { return genre; }
-    public void setGenre(String genre) { this.genre = genre; }
-
     public int getAlbumId() { return albumId; }
-    public void setAlbumId(int albumId) { this.albumId = albumId; }
+    public int getIsArchived() { return isArchived; }
 
-    public boolean isArchived() { return isArchived; }
-    public void setArchived(boolean archived) { isArchived = archived; }
+    public void setId(int id) { this.id = id; }
+    public void setTitle(String title) { this.title = title; }
+    public void setLength(String length) { this.length = length; }
+    public void setGenre(String genre) { this.genre = genre; }
+    public void setAlbumId(int albumId) { this.albumId = albumId; }
+    public void setIsArchived(int isArchived) { this.isArchived = isArchived; }
 }

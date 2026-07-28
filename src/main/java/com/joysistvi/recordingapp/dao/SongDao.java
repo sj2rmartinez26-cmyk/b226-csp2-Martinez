@@ -31,7 +31,7 @@ public class SongDao  {
     // [Section] -> DQL
     // Read Songs
     public void readSong() {
-        String query = "SELECT * FROM songs WHERE is_archived = 0";
+        String query = "SELECT * FROM songs WHERE is_archived = 0 ";
 
         try (Connection connection = dbConnection.connect();
              Statement stmnt = connection.createStatement();
